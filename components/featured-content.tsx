@@ -64,7 +64,7 @@ export function FeaturedContent({ featured }: FeaturedContentProps) {
 
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-10">
                   <div className="flex max-w-3xl flex-col gap-4">
-                  <Badge className="w-fit bg-[#008a7a] text-white hover:bg-[#00695f]">{item.type}</Badge>
+                  <Badge className="w-fit bg-[#008a7a] text-white hover:bg-[#00695f] font-semibold px-3 py-1 rounded-full">{item.type}</Badge>
                     <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">{item.title}</h1>
                     <div className="flex flex-wrap gap-2 text-sm text-gray-300">                      
                       <span>•</span>
@@ -74,13 +74,13 @@ export function FeaturedContent({ featured }: FeaturedContentProps) {
                     </div>
                     <p className="text-gray-200 line-clamp-3 md:line-clamp-4">{item.description}</p>
                     <div className="flex flex-wrap gap-3">
-                      <Button 
-                        className="gap-2 bg-[#008a7a] hover:bg-[#00695f]"
-                        onClick={(e) => handleClick(e, item)}
-                      >
-                        <Play className="h-4 w-4" />
-                        Tonton Sekarang
-                      </Button>
+                    <Button
+                      className="gap-2 bg-[#008a7a] hover:bg-[#00695f] font-semibold px-4 py-2 rounded-md"
+                      onClick={(e) => handleClick(e, item)}
+                    >
+                      <Play className="h-4 w-4" />
+                      Tonton Sekarang
+                    </Button>
                     </div>
                   </div>
                 </div>
