@@ -46,6 +46,27 @@ export default async function HomePage() {
                   Download
                 </Link>
               </li>
+              <li>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="text-sm font-medium hover:text-rose-400">
+                    Credit
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-black border-gray-800">
+                    <DropdownMenuItem className="text-sm font-medium text-[#00d4bd] hover:text-rose-400">
+                      <Link href="https://instagram.com/_mmaul_" target="_blank" className="flex items-center gap-2">
+                        <Instagram className="h-4 w-4" />
+                        Muhamad Maulana (Web Dev)
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="text-sm font-medium text-[#00d4bd] hover:text-rose-400">
+                      <Link href="https://instagram.com/azizfikri.alfalah" target="_blank" className="flex items-center gap-2">
+                        <Instagram className="h-4 w-4" />
+                        Aziz Fikri (Mobile Dev)
+                      </Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </li>
             </ul>
           </nav>
         </div>
@@ -91,6 +112,27 @@ export default async function HomePage() {
                     <Link href="/downloads" className="block text-sm font-medium text-[#00d4bd] hover:text-rose-400">
                       Download
                     </Link>
+                  </li>
+                  <li>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger className="block text-sm font-medium text-[#00d4bd] hover:text-rose-400">
+                        Credit
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="bg-black border-gray-800">
+                        <DropdownMenuItem className="text-sm font-medium text-[#00d4bd] hover:text-rose-400">
+                          <Link href="https://instagram.com/_mmaul_" target="_blank" className="flex items-center gap-2">
+                            <Instagram className="h-4 w-4" />
+                            Muhamad Maulana (Web Dev)
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="text-sm font-medium text-[#00d4bd] hover:text-rose-400">
+                          <Link href="https://instagram.com/azizfikri.alfalah" target="_blank" className="flex items-center gap-2">
+                            <Instagram className="h-4 w-4" />
+                            Aziz Fikri (Mobile Dev)
+                          </Link>
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                   </li>
                 </ul>
               </nav>
