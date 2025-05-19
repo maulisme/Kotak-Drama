@@ -64,7 +64,7 @@ export function FeaturedContent({ featured }: FeaturedContentProps) {
 
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-10">
                   <div className="flex max-w-3xl flex-col gap-4">
-                    <Badge className="w-fit bg-[#00d4bd] text-white hover:bg-[#00bca7]">{item.type}</Badge>
+                  <Badge className="w-fit bg-[#008a7a] text-white hover:bg-[#00695f]">{item.type}</Badge>
                     <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">{item.title}</h1>
                     <div className="flex flex-wrap gap-2 text-sm text-gray-300">                      
                       <span>•</span>
@@ -75,7 +75,7 @@ export function FeaturedContent({ featured }: FeaturedContentProps) {
                     <p className="text-gray-200 line-clamp-3 md:line-clamp-4">{item.description}</p>
                     <div className="flex flex-wrap gap-3">
                       <Button 
-                        className="gap-2 bg-[#00d4bd] hover:bg-[#00bca7]"
+                        className="gap-2 bg-[#008a7a] hover:bg-[#00695f]"
                         onClick={(e) => handleClick(e, item)}
                       >
                         <Play className="h-4 w-4" />
@@ -95,10 +95,11 @@ export function FeaturedContent({ featured }: FeaturedContentProps) {
         {featured.map((_, index) => (
           <button
           key={index}
-          className="h-2 w-2 rounded-full bg-white/50 transition-all hover:bg-white"
+          className="h-11 w-11 rounded-full bg-transparent p-2 flex items-center justify-center"
           onClick={() => emblaApi?.scrollTo(index)}
           aria-label={`Go to slide ${index + 1}`}
-        >
+          type="button"
+          >
           <span className="sr-only">{`Go to slide ${index + 1}`}</span>
         </button>
         
