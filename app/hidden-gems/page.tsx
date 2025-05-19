@@ -10,14 +10,14 @@ async function fetchHiddenGemsDramas() {
     const response = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/channel/hidden-gems.json')
     const data = await response.json()
     return data.pageProps.moreData.items.map((item: any): Drama => ({
-      id: item.bookId,
+      id: item.originalBookId,
       title: item.name,
       year: 2024,
       genre: item.tags?.join(', ') || item.typeTwoName || '',
       poster: item.cover,
       bookNameLower: item.bookNameLower,
       videoUrl: `/watch/${item.bookNameLower}`,
-      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.bookId}/${item.bookNameLower}.json`
+      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
     }))
   } catch (error) {
     console.error('Error fetching hidden gems dramas:', error)

@@ -47,7 +47,7 @@ export default function DownloadsPage() {
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
                 <span>•</span>
-                <span>Virus Total: <a href="https://www.virustotal.com/gui/file/b13918e593171b7b40b8de5f68f0a04e399cce4b6b69c46b5881f06cf675f82c" target="_blank" rel="noopener noreferrer"><b><i></i>Tap to Verify</b></a></span>
+                <span>Virus Total: <a href="https://www.virustotal.com/gui/file/b13918e593171b7b40b8de5f68f0a04e399cce4b6b69c46b5881f06cf675f82c"><b><i></i>Tap to View</b></a></span>
               </div>
             </div>
             <a href="Kotak-Drama.apk">

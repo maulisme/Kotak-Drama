@@ -21,14 +21,14 @@ function transformDramaData(rawData: any): DramaData {
 
   // Transform bigList items to our data structure
   const transformDrama = (item: any) => ({
-    id: item.bookId,
+    id: item.originalBookId,
     title: item.name,
     year: 2024, // You might want to extract this from the data if available
     genre: item.tags?.join(', ') || item.typeTwoName || '',
     poster: item.cover,
     bookNameLower: item.bookNameLower,
     videoUrl: `/watch/${item.bookNameLower}`,
-    jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.bookId}/${item.bookNameLower}.json`
+    jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
   })
 
   const transformFeaturedDrama = (item: any): any => ({

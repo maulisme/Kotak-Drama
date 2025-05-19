@@ -17,14 +17,14 @@ async function fetchExploreDramas(page: number = 0) {
     const data = await response.json()
     return {
       dramas: data.pageProps.bookList.map((item: any): Drama => ({
-        id: item.bookId,
+        id: item.originalBookId,
         title: item.bookName,
         year: 2024,
         genre: item.typeTwoList?.map((t: any) => t.name).join(', ') || '',
         poster: item.cover,
         bookNameLower: item.bookNameLower,
         videoUrl: `/watch/${item.bookNameLower}`,
-        jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.bookId}/${item.bookNameLower}.json`
+        jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
       })),
       totalPages: data.pageProps.pages || 1
     }

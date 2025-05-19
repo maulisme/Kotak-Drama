@@ -292,14 +292,14 @@ export default function WatchPage() {
             <TabsContent value="similar" className="mt-4">
               <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
                 {movieData.pageProps.recommends.map((item) => ({
-                  id: item.bookId,
+                  id: item.originalBookId,
                   title: item.bookName,
                   year: 2024,
                   genre: item.typeTwoName || '',
                   poster: item.cover,
                   bookNameLower: item.bookNameLower,
                   videoUrl: `/watch/${item.bookNameLower}`,
-                  jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.bookId}/${item.bookNameLower}.json`
+                  jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
                 })).map((drama) => (
                   <div key={drama.id} className="scale-90">
                     <DramaCard drama={drama} />

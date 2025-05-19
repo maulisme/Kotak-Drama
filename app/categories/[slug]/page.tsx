@@ -19,7 +19,7 @@ async function fetchCategories() {
         ...data.pageProps.types.filter((type: Category) => type.id !== 0)
       ],
       dramas: data.pageProps.bookList.map((item: any): Drama => ({
-        id: item.bookId,
+        id: item.originalBookId,
         title: item.bookName,
         year: 2024,
         genre: item.typeTwoList?.map((t: any) => t.name).join(', ') || '',
@@ -55,14 +55,14 @@ async function fetchCategoryContent(slug: string) {
     
     // Map the dramas from the category-specific endpoint
     const dramas = data.pageProps.bookList.map((item: any): Drama => ({
-      id: item.bookId,
+      id: item.originalBookId,
       title: item.bookName,
       year: 2024,
       genre: item.typeTwoList?.map((t: any) => t.name).join(', ') || '',
       poster: item.cover,
       bookNameLower: item.bookNameLower,
       videoUrl: `/watch/${item.bookNameLower}`,
-      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.bookId}/${item.bookNameLower}.json`
+      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
     }))
 
     return {
