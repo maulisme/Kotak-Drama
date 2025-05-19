@@ -13,11 +13,11 @@ export default function DownloadsPage() {
         
         <h1 className="text-3xl font-bold mb-8">Download DramaBox APK</h1>
         
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 md:gap-8 md:grid-cols-2">
           {/* Official APK */}
-          <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-            <h2 className="text-xl font-semibold text-[#00d4bd] mb-4">Official APK</h2>
-            <p className="text-gray-400 mb-6">
+          <div className="bg-gray-900 rounded-lg p-4 sm:p-6 border border-gray-800">
+            <h2 className="text-lg sm:text-xl font-semibold text-[#00d4bd] mb-3 sm:mb-4">Official APK</h2>
+            <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6">
               Download versi resmi DramaBox APK. Versi ini direkomendasikan untuk pengalaman terbaik.
               Tautan ini akan mengarah ke halaman unduhan resmi DramaBox di Google Play Store.
             </p>
@@ -26,7 +26,7 @@ export default function DownloadsPage() {
             target="_blank"
             rel="noopener noreferrer"
             >
-            <Button className="w-full mt-6 bg-[#00d4bd] hover:bg-[#00b3a0] text-black">
+            <Button className="w-full mt-4 sm:mt-6 bg-[#00d4bd] hover:bg-[#00b3a0] text-black">
                 <Download className="h-4 w-4 mr-2" />
                 Download Official APK
             </Button>
@@ -34,24 +34,24 @@ export default function DownloadsPage() {
           </div>
 
           {/* Unofficial APK */}
-          <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
-            <h2 className="text-xl font-semibold text-[#00d4bd] mb-4">Unofficial APK</h2>
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 text-sm text-gray-400">
+          <div className="bg-gray-900 rounded-lg p-4 sm:p-6 border border-gray-800">
+            <h2 className="text-lg sm:text-xl font-semibold text-[#00d4bd] mb-3 sm:mb-4">Unofficial APK</h2>
+            <div className="space-y-2 sm:space-y-4">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
                 <span>•</span>
                 <span>MD5: a2df006182581df4c79b948f350390f7</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-400">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
                 <span>•</span>
                 <span>SHA1: fad72cba67ca89b739accc22e7ee6362e1c2d5c9</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-400">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
                 <span>•</span>
-                <span>Vitus Total: <a href="https://www.virustotal.com/gui/file/b13918e593171b7b40b8de5f68f0a04e399cce4b6b69c46b5881f06cf675f82c">b13918e593171b7b40b8de5f68f0a04e399cce4b6b69c46b5881f06cf675f82c</a></span>
+                <span>Virus Total: <a href="https://www.virustotal.com/gui/file/b13918e593171b7b40b8de5f68f0a04e399cce4b6b69c46b5881f06cf675f82c" target="_blank" rel="noopener noreferrer"><b><i></i>Tap to Verify</b></a></span>
               </div>
             </div>
             <a href="Kotak-Drama.apk">
-            <Button className="w-full mt-6 bg-[#00d4bd] hover:bg-[#00b3a0] text-black">
+            <Button className="w-full mt-4 sm:mt-6 bg-[#00d4bd] hover:bg-[#00b3a0] text-black">
               <Download className="h-4 w-4 mr-2" />
               Download Unofficial APK
             </Button>
