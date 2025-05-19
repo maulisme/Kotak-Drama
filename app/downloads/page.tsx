@@ -39,21 +39,23 @@ export default function DownloadsPage() {
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-sm text-gray-400">
                 <span>•</span>
-                <span>MD5: Hash Value</span>
+                <span>MD5: a2df006182581df4c79b948f350390f7</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-400">
                 <span>•</span>
-                <span>SHA1: Hash Value</span>
+                <span>SHA1: fad72cba67ca89b739accc22e7ee6362e1c2d5c9</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-400">
                 <span>•</span>
-                <span>Vitus Total: Virus Total Result</span>
+                <span>Vitus Total: <a href="https://www.virustotal.com/gui/file/b13918e593171b7b40b8de5f68f0a04e399cce4b6b69c46b5881f06cf675f82c">b13918e593171b7b40b8de5f68f0a04e399cce4b6b69c46b5881f06cf675f82c</a></span>
               </div>
             </div>
+            <a href="Kotak-Drama.apk">
             <Button className="w-full mt-6 bg-[#00d4bd] hover:bg-[#00b3a0] text-black">
               <Download className="h-4 w-4 mr-2" />
               Download Unofficial APK
             </Button>
+            </a>
           </div>
         </div>
 
