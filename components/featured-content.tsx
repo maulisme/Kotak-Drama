@@ -94,10 +94,14 @@ export function FeaturedContent({ featured }: FeaturedContentProps) {
       <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
         {featured.map((_, index) => (
           <button
-            key={index}
-            className="h-2 w-2 rounded-full bg-white/50 transition-all hover:bg-white"
-            onClick={() => emblaApi?.scrollTo(index)}
-          />
+          key={index}
+          className="h-2 w-2 rounded-full bg-white/50 transition-all hover:bg-white"
+          onClick={() => emblaApi?.scrollTo(index)}
+          aria-label={`Go to slide ${index + 1}`}
+        >
+          <span className="sr-only">{`Go to slide ${index + 1}`}</span>
+        </button>
+        
         ))}
       </div>
     </div>
