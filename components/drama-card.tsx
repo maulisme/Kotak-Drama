@@ -40,7 +40,7 @@ export function DramaCard({ drama }: DramaCardProps) {
         </div>
         <div className="mt-2">
           <h3 className="font-medium line-clamp-2">{drama.title}</h3>
-          <p className="text-xs text-gray-400">{drama.year}</p>
+          <p className="text-xs text-gray-400">{drama.genre}</p>
         </div>
       </div>
     </Link>

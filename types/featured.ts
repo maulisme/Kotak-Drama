@@ -2,7 +2,6 @@ export interface Featured {
   id: string
   title: string
   description: string
-  year: number
   type: string
   genre: string
   poster: string

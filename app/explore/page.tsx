@@ -19,7 +19,6 @@ async function fetchExploreDramas(page: number = 0) {
       dramas: data.pageProps.bookList.map((item: any): Drama => ({
         id: item.originalBookId,
         title: item.bookName,
-        year: 2024,
         genre: item.typeTwoList?.map((t: any) => t.name).join(', ') || '',
         poster: item.cover,
         bookNameLower: item.bookNameLower,

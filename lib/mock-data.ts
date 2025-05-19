@@ -317,7 +317,7 @@ export const mockMovieData = {
   pageProps: {
     tabData: ["1-50", "51-57"],
     bookInfo: {
-      bookId: "41000111541",
+      originalBookId: "41000111541",
       bookName: "Menelusuri Jejak Cinta",
       cover: "https://sres.dramaboxdb.com/data/cppartner/4x1/41x0/410x0/41000113270/41000113270.jpg@w=240&h=320",
       viewCount: 13214,
@@ -341,7 +341,7 @@ export const mockMovieData = {
     },
     recommends: [
       {
-        bookId: "41000113005",
+        originalBookId: "41000113005",
         bookName: "Jantungku Hanya Berdetak Untukmu",
         cover: "https://sres.dramaboxdb.com/data/cppartner/4x1/41x0/410x0/41000114328/41000114328.jpg@w=240&h=320",
         viewCount: 18225,
@@ -368,7 +368,7 @@ export const mockMovieData = {
 }
 
 // Helper function to get mock data for a specific movie
-export function getMockMovieData(bookId: string, bookNameLower: string) {
+export function getMockMovieData(originalBookId: string, bookNameLower: string) {
   // In a real implementation, you would fetch from the API
   // For now, we'll return the mock data
   return mockMovieData;

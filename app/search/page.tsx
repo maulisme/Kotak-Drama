@@ -13,14 +13,13 @@ async function searchDramas(query: string) {
     if (!data.pageProps.bookList) return []
     
     return data.pageProps.bookList.map((item: any): Drama => ({
-      id: item.originalBookId,
+      id: item.bookId,
       title: item.bookName,
-      year: 2024,
       genre: item.typeTwoList?.map((t: any) => t.name).join(', ') || '',
       poster: item.coverWap,
       bookNameLower: item.bookNameLower,
       videoUrl: `/watch/${item.bookNameLower}`,
-      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
+      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.bookId}/${item.bookNameLower}.json`
     }))
   } catch (error) {
     console.error('Error searching dramas:', error)

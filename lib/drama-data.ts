@@ -23,7 +23,6 @@ function transformDramaData(rawData: any): DramaData {
   const transformDrama = (item: any) => ({
     id: item.originalBookId,
     title: item.name,
-    year: 2024, // You might want to extract this from the data if available
     genre: item.tags?.join(', ') || item.typeTwoName || '',
     poster: item.cover,
     bookNameLower: item.bookNameLower,

@@ -21,7 +21,6 @@ async function fetchCategories() {
       dramas: data.pageProps.bookList.map((item: any): Drama => ({
         id: item.originalBookId,
         title: item.bookName,
-        year: 2024,
         genre: item.typeTwoList?.map((t: any) => t.name).join(', ') || '',
         poster: item.cover,
         bookNameLower: item.bookNameLower,
@@ -42,7 +41,6 @@ async function fetchCategoryDramas(categoryId: number) {
     return data.pageProps.bookList.map((item: any): Drama => ({
       id: item.originalBookId,
       title: item.bookName,
-      year: 2024,
       genre: item.typeTwoList?.map((t: any) => t.name).join(', ') || '',
       poster: item.cover,
       bookNameLower: item.bookNameLower,
@@ -78,7 +76,6 @@ async function fetchCategoryContent(slug: string) {
     const dramas = data.pageProps.bookList.map((item: any): Drama => ({
       id: item.originalBookId,
       title: item.bookName,
-      year: 2024,
       genre: item.typeTwoList?.map((t: any) => t.name).join(', ') || '',
       poster: item.cover,
       bookNameLower: item.bookNameLower,

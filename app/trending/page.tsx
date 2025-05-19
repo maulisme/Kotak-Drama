@@ -12,7 +12,6 @@ async function fetchTrendingDramas() {
     return data.pageProps.moreData.items.map((item: any): Drama => ({
       id: item.originalBookId,
       title: item.name,
-      year: 2024,
       genre: item.tags?.join(', ') || item.typeTwoName || '',
       poster: item.cover,
       bookNameLower: item.bookNameLower,

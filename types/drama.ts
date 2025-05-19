@@ -8,7 +8,6 @@ export interface Episode {
 export interface Drama {
   id: string
   title: string
-  year: number
   genre: string
   poster: string
   bookNameLower?: string

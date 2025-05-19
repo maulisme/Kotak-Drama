@@ -66,8 +66,7 @@ export function FeaturedContent({ featured }: FeaturedContentProps) {
                   <div className="flex max-w-3xl flex-col gap-4">
                     <Badge className="w-fit bg-[#00d4bd] text-white hover:bg-[#00bca7]">{item.type}</Badge>
                     <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">{item.title}</h1>
-                    <div className="flex flex-wrap gap-2 text-sm text-gray-300">
-                      <span>{item.year}</span>
+                    <div className="flex flex-wrap gap-2 text-sm text-gray-300">                      
                       <span>•</span>
                       <span>{item.episodes?.length || 16} Episode</span>
                       <span>•</span>

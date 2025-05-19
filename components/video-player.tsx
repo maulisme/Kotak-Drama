@@ -38,7 +38,7 @@ export function VideoPlayer({ videoUrl, currentEpisode = 1 }: VideoPlayerProps) 
       // Fetch video data from dramabox API
       const fetchVideoData = async () => {
         try {
-          const response = await fetch(`https://n0bu.my.id/api/dramabox.php?id=${movieData.pageProps.bookInfo.bookId}&eps=${currentEpisode}`)
+          const response = await fetch(`https://n0bu.my.id/api/dramabox.php?id=${movieData.pageProps.bookInfo.originalBookId}&eps=${currentEpisode}`)
           const data = await response.json()
           
           if (data.data?.detail?.videoUrls) {
