@@ -11,6 +11,16 @@ async function fetchDramaData() {
   }
 }
 
+// Helper function to get the correct ID for different API endpoints
+export function getDramaId(item: any, useOriginalId: boolean = false): string {
+  // For video player API, use bookId
+  if (!useOriginalId) {
+    return item.bookId || item.originalBookId || item.id
+  }
+  // For JSON data API, use originalBookId
+  return item.originalBookId || item.bookId || item.id
+}
+
 function transformDramaData(rawData: any): DramaData {
   if (!rawData) return {
     featured: [],
@@ -21,13 +31,13 @@ function transformDramaData(rawData: any): DramaData {
 
   // Transform bigList items to our data structure
   const transformDrama = (item: any) => ({
-    id: item.originalBookId,
+    id: getDramaId(item, true), // Use originalBookId for JSON data
     title: item.name,
     genre: item.tags?.join(', ') || item.typeTwoName || '',
     poster: item.cover,
     bookNameLower: item.bookNameLower,
     videoUrl: `/watch/${item.bookNameLower}`,
-    jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
+    jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${getDramaId(item, true)}/${item.bookNameLower}.json`
   })
 
   const transformFeaturedDrama = (item: any): any => ({

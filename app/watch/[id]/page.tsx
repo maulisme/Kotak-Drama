@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ChevronLeft, Heart, Share2, Download, Facebook, Twitter, MessageCircle, Instagram } from "lucide-react"
 import { useParams } from "next/navigation"
+import { getDramaId } from "@/lib/drama-data"
 
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -92,7 +93,7 @@ export default function WatchPage() {
 
     try {
       setIsDownloading(true)
-      const response = await fetch(`https://n0bu.my.id/api/dramabox.php?id=${bookInfo.bookId}&eps=${currentEpisode}`)
+      const response = await fetch(`https://n0bu.my.id/api/dramabox.php?id=${getDramaId(bookInfo)}&eps=${currentEpisode}`)
       const data = await response.json()
       
       if (data.data?.detail?.videoUrls) {

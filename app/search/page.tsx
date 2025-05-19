@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { getDramaId } from "@/lib/drama-data"
 
 import { SearchForm } from "@/components/search-form"
 import { DramaCard } from "@/components/drama-card"
@@ -13,13 +14,13 @@ async function searchDramas(query: string) {
     if (!data.pageProps.bookList) return []
     
     return data.pageProps.bookList.map((item: any): Drama => ({
-      id: item.bookId,
+      id: getDramaId(item, true),
       title: item.bookName,
       genre: item.typeTwoList?.map((t: any) => t.name).join(', ') || '',
       poster: item.coverWap,
       bookNameLower: item.bookNameLower,
       videoUrl: `/watch/${item.bookNameLower}`,
-      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.bookId}/${item.bookNameLower}.json`
+      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${getDramaId(item, true)}/${item.bookNameLower}.json`
     }))
   } catch (error) {
     console.error('Error searching dramas:', error)

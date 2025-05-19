@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Play, Pause, Volume2, VolumeX, Maximize, Minimize } from "lucide-react"
+import { getDramaId } from "@/lib/drama-data"
 
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
@@ -38,7 +39,7 @@ export function VideoPlayer({ videoUrl, currentEpisode = 1 }: VideoPlayerProps) 
       // Fetch video data from dramabox API
       const fetchVideoData = async () => {
         try {
-          const response = await fetch(`https://n0bu.my.id/api/dramabox.php?id=${movieData.pageProps.bookInfo.originalBookId}&eps=${currentEpisode}`)
+          const response = await fetch(`https://n0bu.my.id/api/dramabox.php?id=${getDramaId(movieData.pageProps.bookInfo)}&eps=${currentEpisode}`)
           const data = await response.json()
           
           if (data.data?.detail?.videoUrls) {
