@@ -2,7 +2,7 @@ import { DramaData } from "@/types/drama"
 
 async function fetchDramaData() {
   try {
-    const response = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in.json')
+    const response = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in.json')
     const data = await response.json()
     return data.pageProps
   } catch (error) {
@@ -37,7 +37,7 @@ function transformDramaData(rawData: any): DramaData {
     poster: item.cover,
     bookNameLower: item.bookNameLower,
     videoUrl: `/watch/${item.bookNameLower}`,
-    jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${getDramaId(item, true)}/${item.bookNameLower}.json`
+    jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/movie/${getDramaId(item, true)}/${item.bookNameLower}.json`
   })
 
   const transformFeaturedDrama = (item: any): any => ({

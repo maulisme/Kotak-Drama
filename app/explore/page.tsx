@@ -13,7 +13,7 @@ async function fetchExploreDramas(page: number = 0) {
   try {
     // Skip page 1 as it's invalid
     const actualPage = page >= 1 ? page + 1 : page
-    const response = await fetch(`https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/genres/0/${actualPage}.json`)
+    const response = await fetch(`https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/genres/0/${actualPage}.json`)
     const data = await response.json()
     return {
       dramas: data.pageProps.bookList.map((item: any): Drama => ({
@@ -23,7 +23,7 @@ async function fetchExploreDramas(page: number = 0) {
         poster: item.cover,
         bookNameLower: item.bookNameLower,
         videoUrl: `/watch/${item.bookNameLower}`,
-        jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
+        jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
       })),
       totalPages: data.pageProps.pages || 1
     }

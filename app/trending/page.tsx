@@ -7,7 +7,7 @@ import { Drama } from "@/types/drama"
 
 async function fetchTrendingDramas() {
   try {
-    const response = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/channel/trending.json')
+    const response = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/channel/trending.json')
     const data = await response.json()
     return data.pageProps.moreData.items.map((item: any): Drama => ({
       id: item.originalBookId,
@@ -16,7 +16,7 @@ async function fetchTrendingDramas() {
       poster: item.cover,
       bookNameLower: item.bookNameLower,
       videoUrl: `/watch/${item.bookNameLower}`,
-      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
+      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
     }))
   } catch (error) {
     console.error('Error fetching trending dramas:', error)

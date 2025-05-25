@@ -8,7 +8,7 @@ import { Drama } from "@/types/drama"
 async function searchDramas(query: string) {
   try {
     const encodedQuery = encodeURIComponent(query)
-    const response = await fetch(`https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/search.json?searchValue=${encodedQuery}`)
+    const response = await fetch(`https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/search.json?searchValue=${encodedQuery}`)
     const data = await response.json()
     
     if (!data.pageProps.bookList) return []
@@ -20,7 +20,7 @@ async function searchDramas(query: string) {
       poster: item.coverWap,
       bookNameLower: item.bookNameLower,
       videoUrl: `/watch/${item.bookNameLower}`,
-      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${getDramaId(item, true)}/${item.bookNameLower}.json`
+      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/movie/${getDramaId(item, true)}/${item.bookNameLower}.json`
     }))
   } catch (error) {
     console.error('Error searching dramas:', error)

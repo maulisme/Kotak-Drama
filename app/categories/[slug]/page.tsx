@@ -11,7 +11,7 @@ interface Category {
 
 async function fetchCategories() {
   try {
-    const response = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/genres.json')
+    const response = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/genres.json')
     const data = await response.json()
     return {
       categories: [
@@ -36,7 +36,7 @@ async function fetchCategories() {
 async function fetchCategoryContent(slug: string) {
   try {
     // First fetch all categories to get the ID for the slug
-    const categoriesResponse = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/genres.json')
+    const categoriesResponse = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/genres.json')
     const categoriesData = await categoriesResponse.json()
     
     // Find the category by slug (replaceName)
@@ -49,7 +49,7 @@ async function fetchCategoryContent(slug: string) {
     }
 
     // Fetch category-specific content using the category ID
-    const response = await fetch(`https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/genres/${category.id}.json?typeTwoId=${category.id}`)
+    const response = await fetch(`https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/genres/${category.id}.json?typeTwoId=${category.id}`)
     const data = await response.json()
     
     // Map the dramas from the category-specific endpoint
@@ -60,7 +60,7 @@ async function fetchCategoryContent(slug: string) {
       poster: item.cover,
       bookNameLower: item.bookNameLower,
       videoUrl: `/watch/${item.bookNameLower}`,
-      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250515/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
+      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
     }))
 
     return {
