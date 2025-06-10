@@ -299,7 +299,7 @@ export default function WatchPage() {
                   poster: item.cover,
                   bookNameLower: item.bookNameLower,
                   videoUrl: `/watch/${item.bookNameLower}`,
-                  jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/movie/${item.bookId}/${item.bookNameLower}.json`
+                  jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250528/in/movie/${item.bookId}/${item.bookNameLower}.json`
                 })).map((drama) => (
                   <div key={drama.id} className="scale-90">
                     <DramaCard drama={drama} />

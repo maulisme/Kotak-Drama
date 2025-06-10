@@ -7,7 +7,7 @@ import { Drama } from "@/types/drama"
 
 async function fetchHiddenGemsDramas() {
   try {
-    const response = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/channel/hidden-gems.json')
+    const response = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250528/in/channel/hidden-gems.json')
     const data = await response.json()
     return data.pageProps.moreData.items.map((item: any): Drama => ({
       id: item.originalBookId,
@@ -16,7 +16,7 @@ async function fetchHiddenGemsDramas() {
       poster: item.cover,
       bookNameLower: item.bookNameLower,
       videoUrl: `/watch/${item.bookNameLower}`,
-      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250522/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
+      jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250528/in/movie/${item.originalBookId}/${item.bookNameLower}.json`
     }))
   } catch (error) {
     console.error('Error fetching hidden gems dramas:', error)
