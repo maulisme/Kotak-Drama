@@ -2,7 +2,7 @@ import { DramaData } from "@/types/drama"
 
 async function fetchDramaData() {
   try {
-    const response = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250528/in.json')
+    const response = await fetch('https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250918/in.json')
     const data = await response.json()
     return data.pageProps
   } catch (error) {
@@ -12,14 +12,19 @@ async function fetchDramaData() {
 }
 
 // Helper function to get the correct ID for different API endpoints
-export function getDramaId(item: any, useOriginalId: boolean = false): string {
-  // For video player API, use bookId
-  if (!useOriginalId) {
-    return item.bookId || item.originalBookId || item.id
-  }
-  // For JSON data API, use originalBookId
-  return item.originalBookId || item.bookId || item.id
+// drama-data.ts
+export function getDramaId(item: any, useOriginalId = false): string | undefined {
+  if (!item) return undefined;
+  if (typeof item === "string") return item; // kalau sudah string ID, langsung balikin
+
+  // kalau object, pilih field yang tersedia
+  const id = useOriginalId
+    ? (item?.id ?? item?.bookId ?? item?.book_id ?? item?.meta?.id)
+    : (item?.bookId ?? item?.id ?? item?.book_id ?? item?.meta?.bookId);
+
+  return typeof id === "string" ? id : id ? String(id) : undefined;
 }
+
 
 function transformDramaData(rawData: any): DramaData {
   if (!rawData) return {
@@ -37,7 +42,7 @@ function transformDramaData(rawData: any): DramaData {
     poster: item.cover,
     bookNameLower: item.bookNameLower,
     videoUrl: `/watch/${item.bookNameLower}`,
-    jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250528/in/movie/${getDramaId(item, true)}/${item.bookNameLower}.json`
+    jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250918/in/movie/${getDramaId(item, true)}/${item.bookNameLower}.json`
   })
 
   const transformFeaturedDrama = (item: any): any => ({

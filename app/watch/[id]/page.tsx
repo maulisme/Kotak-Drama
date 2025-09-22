@@ -93,13 +93,13 @@ export default function WatchPage() {
 
     try {
       setIsDownloading(true)
-      const response = await fetch(`https://n0bu.my.id/api/dramabox.php?id=${getDramaId(bookInfo)}&eps=${currentEpisode}`)
+      const response = await fetch(`https://api-dramabox.vercel.app/api/dramabox/stream?bookid=${getDramaId(bookInfo)}&episode=${currentEpisode}`)
       const data = await response.json()
       
       if (data.data?.detail?.videoUrls) {
         // Find the video URL with nakavideo CDN and 720p quality
         const videoUrl = data.data.detail.videoUrls.find(
-          (url: any) => url.cdn === "nakavideo.dramaboxdb.com" && url.quality === 720
+          (url: any) => url.cdn === "nakavideo.dramaboxdb.com" && url.quality === 1080
         )?.url
 
         if (videoUrl) {
@@ -299,7 +299,7 @@ export default function WatchPage() {
                   poster: item.cover,
                   bookNameLower: item.bookNameLower,
                   videoUrl: `/watch/${item.bookNameLower}`,
-                  jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250528/in/movie/${item.bookId}/${item.bookNameLower}.json`
+                  jsonUrl: `https://www.dramaboxdb.com/_next/data/dramaboxdb_prod_20250918/in/movie/${item.bookId}/${item.bookNameLower}.json`
                 })).map((drama) => (
                   <div key={drama.id} className="scale-90">
                     <DramaCard drama={drama} />

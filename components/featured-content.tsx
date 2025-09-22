@@ -58,9 +58,9 @@ export function FeaturedContent({ featured }: FeaturedContentProps) {
                   fill
                   className="object-cover"
                   priority
-                  loading="lazy"  // Lazy loading untuk gambar
-                  placeholder="blur" // Placeholder blur
-                  blurDataURL="/path-to-low-res-placeholder.jpg"  // Placeholder gambar resolusi rendah
+                  // loading="lazy"
+                  placeholder="empty"
+                  // blurDataURL="/path-to-low-res-placeholder.jpg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent" />
